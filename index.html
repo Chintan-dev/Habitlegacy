@@ -3,47 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Tracker</title>
-    <link rel="stylesheet" href="styles.css">
-   <!-- ✅ Correct Firebase CDN Imports -->
+    <title>Habit Tracker</title>
+</head>
+<body>
+
+    <div id="login-container">
+        <button id="login-btn">Login with Google</button>
+    </div>
+
+    <div id="dashboard" style="display: none;">
+        <h1>Welcome!</h1>
+        <button id="logout-btn">Logout</button>
+
+        <h2>Tasks</h2>
+        <input type="text" id="task-name" placeholder="Enter Task">
+        <button id="add-task">Add Task</button>
+        <ul id="task-list"></ul>
+
+        <h2>Level</h2>
+        <p id="user-level">Level: 1</p>
+        <p id="progress">XP: 0</p>
+    </div>
+
+    <!-- ✅ Correct Firebase CDN Imports -->
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics-compat.js"></script>
-    <script defer src="firebase-config.js"></script>
-    <script defer src="script.js"></script>
-</head>
-<body>
-    <div class="container">
-        <!-- Login Section -->
-        <div id="login-container">
-            <h1>Task Tracker</h1>
-            <p>Track your tasks, level up, and stay productive!</p>
-            <button id="login-btn" class="btn">Sign in with Google</button>
-        </div>
 
-        <!-- Dashboard -->
-        <div id="dashboard" style="display: none;">
-            <div class="header">
-                <h2>Welcome, <span id="user-name"></span>!</h2>
-                <button id="logout-btn" class="btn btn-danger">Logout</button>
-            </div>
+    <!-- Firebase Config -->
+    <script src="firebase-config.js"></script>
 
-            <div class="progress-container">
-                <div id="user-level">Level: 1</div>
-                <div class="progress-bar">
-                    <div id="progress-fill"></div>
-                </div>
-                <p id="progress-text">XP: 0</p>
-            </div>
+    <!-- Main JavaScript -->
+    <script src="script.js"></script>
 
-            <div class="task-section">
-                <input type="text" id="task-name" placeholder="Enter a new task..." />
-                <button id="add-task" class="btn btn-primary">Add Task</button>
-            </div>
-
-            <ul id="task-list"></ul>
-        </div>
-    </div>
 </body>
 </html>

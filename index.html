@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Login Section -->
+        <div id="login-container">
+            <h1>Task Tracker</h1>
+            <p>Track your tasks, level up, and stay productive!</p>
+            <button id="login-btn" class="btn">Sign in with Google</button>
+        </div>
+
+        <!-- Dashboard -->
+        <div id="dashboard" style="display: none;">
+            <div class="header">
+                <h2>Welcome, <span id="user-name"></span>!</h2>
+                <button id="logout-btn" class="btn btn-danger">Logout</button>
+            </div>
+
+            <div class="progress-container">
+                <div id="user-level">Level: 1</div>
+                <div class="progress-bar">
+                    <div id="progress-fill"></div>
+                </div>
+                <p id="progress-text">XP: 0</p>
+            </div>
+
+            <div class="task-section">
+                <input type="text" id="task-name" placeholder="Enter a new task..." />
+                <button id="add-task" class="btn btn-primary">Add Task</button>
+            </div>
+
+            <ul id="task-list"></ul>
+        </div>
+    </div>
+</body>
+</html>
